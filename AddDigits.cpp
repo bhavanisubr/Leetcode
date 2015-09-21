@@ -8,8 +8,8 @@ public:
            num /= 10;
 	}
 	if (sum >= 10)   return addDigits(sum);
-	return sum;
-	*/
+	return sum; */
+	
 	// O(1) time solution:
 	return (1 + ((num - 1) % 9));
     }
