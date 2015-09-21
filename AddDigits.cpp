@@ -4,7 +4,7 @@ public:
         // Trivial solution:
         /*
         int sum = 0;
-	    while (num) {
+	while (num) {
 	        sum += num % 10;
 	        num /= 10;
 	    }
