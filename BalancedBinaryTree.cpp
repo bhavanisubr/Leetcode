@@ -18,7 +18,7 @@ public:
         if (!root)   return true;
         int leftHeight  = getHeight(root->left);
         int rightHeight = getHeight(root->right);
-        if (abs(leftHeight - rightHeight) <= 1 && isBalanced(root->left) && isBalanced(root->right))    return true;
+        if (abs(leftHeight - rightHeight) <= 1 && isBalanced(root->left) && isBalanced(root->right))   return true;
         return false;
     }
 };
