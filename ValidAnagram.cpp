@@ -11,7 +11,7 @@ public:
        }
        for (auto it = charCountMap.begin(); it != charCountMap.end(); it++)
           if (it->second) return false;
-       return true;*/
+       return true; */
        
        // Solution 2:
        sort(s.begin(), s.end());
