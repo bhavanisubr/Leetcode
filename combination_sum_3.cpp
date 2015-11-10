@@ -16,12 +16,12 @@ class Solution {
 public:
   vector<vector<int>> out;
   vector<int> temp;
-  void combinationSum3Helper(int k, int n, int highestNumSoFar) {
+  void combinationSum3Helper(int k, int n, int start) {
     if (k == 0 && n == 0) {
       out.push_back(temp);
       return;
     }
-    for (int i = highestNumSoFar; i <= 10 - k && i <= n; i++) {
+    for (int i = start; i <= 10 - k && i <= n; i++) {
       temp.push_back(i);
       combinationSum3Helper(k - 1, n - i, i + 1);
       temp.pop_back();
