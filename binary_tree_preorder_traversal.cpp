@@ -34,14 +34,14 @@ public:
     return out;*/
     
     // Method 2: Alternative recursive solution
-    vector<int> out;
+    /*vector<int> out;
     if (!root)  return out;
     out.push_back(root->val);
     vector<int> leftPath = preorderTraversal(root->left);
     vector<int> rightPath = preorderTraversal(root->right);
     out.insert(out.end(), leftPath.begin(), leftPath.end());
     out.insert(out.end(), rightPath.begin(), rightPath.end());
-    return out;
+    return out;*/
 
     // Method 3: Iterative solution
     /*vector<int> out;
@@ -56,5 +56,27 @@ public:
       if (temp->left)  nodeStack.push(temp->left);
     }
     return out;*/
+
+    // Method 4: Alternative iterative solution
+    vector<int> out;
+    if (!root)  return out;
+    stack<TreeNode*> nodeStack;
+    TreeNode* temp = root;
+    while (temp) {
+      nodeStack.push(temp);
+      out.push_back(temp->val);
+      temp = temp->left;
+    }
+    while (!nodeStack.empty()) {
+      TreeNode* node = nodeStack.top();
+      nodeStack.pop();
+      node = node->right;
+      while (node) {
+        nodeStack.push(node);
+        out.push_back(node->val);
+        node = node->left;
+      }
+    }
+    return out;
   }
 };
