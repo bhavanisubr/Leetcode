@@ -28,11 +28,23 @@ public:
   }
 
   vector<int> preorderTraversal(TreeNode* root) {
-    vector<int> out;
     // Method 1: Recursive solution
-    //preorder(root, out);
+    /*vector<int> out;
+    preorder(root, out);
+    return out;*/
     
-    // Method 2: Iterative solution
+    // Method 2: Alternative recursive solution
+    vector<int> out;
+    if (!root)  return out;
+    out.push_back(root->val);
+    vector<int> leftPath = preorderTraversal(root->left);
+    vector<int> rightPath = preorderTraversal(root->right);
+    out.insert(out.end(), leftPath.begin(), leftPath.end());
+    out.insert(out.end(), rightPath.begin(), rightPath.end());
+    return out;
+
+    // Method 3: Iterative solution
+    /*vector<int> out;
     if (!root)  return out;
     stack<TreeNode*> nodeStack;
     nodeStack.push(root);
@@ -43,6 +55,6 @@ public:
       if (temp->right)  nodeStack.push(temp->right);
       if (temp->left)  nodeStack.push(temp->left);
     }
-    return out;
+    return out;*/
   }
 };
