@@ -34,10 +34,19 @@
  
 class Solution {
 public:
+  TreeLinkNode* getNextRight(TreeLinkNode* node) {
+    node = node->next;
+    while (node) {
+      if (node->left)  return node->left;
+      if (node->right)  return node->right;
+      node = node->next;
+    }
+    return NULL;
+  }
   void connect(TreeLinkNode* root) {
     if (!root)  return;
-    if (root->left)  root->left->next = root->right ? root->right : NULL;
-    if (root->right)  root->right->next = root->next ? root->next->left : NULL;
+    if (root->left)  root->left->next = root->right ? root->right : getNextRight(root);
+    if (root->right)  root->right->next = getNextRight(root);
     connect(root->left);
     connect(root->right);
   }
