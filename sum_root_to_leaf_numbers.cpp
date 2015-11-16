@@ -10,6 +10,14 @@
  * The root-to-leaf path 1->2 represents the number 12.
  * The root-to-leaf path 1->3 represents the number 13.
  * Return the sum = 12 + 13 = 25.
+ *
+ * Definition for a binary tree node:
+ * struct TreeNode {
+ *   int val;
+ *   TreeNode* left;
+ *   TreeNode* right;
+ *   TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
  */
 
 class Solution {
