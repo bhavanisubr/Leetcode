@@ -19,6 +19,7 @@ public:
       if (maxLISLengthSoFar[mid] > key)  end = mid - 1;
       else  begin = mid + 1;
     }
+    return begin;
   }
 
   int lengthOfLIS(vector<int>& nums) {
