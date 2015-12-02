@@ -25,15 +25,13 @@ public:
     // Method 1: Dynamic programming - O(n^2) time
     /*if (nums.empty())  return 0;
     vector<int> maxLISLengthSoFar(nums.size(), 0);
+    int overallMax = INT_MIN;
     for (int i = 0; i < nums.size(); i++) {
       for (int j = i - 1; j >= 0; j--) {
         if (nums[j] < nums[i])
           maxLISLengthSoFar[i] = max(maxLISLengthSoFar[j], maxLISLengthSoFar[i]);
       }
       ++maxLISLengthSoFar[i];
-    }
-    int overallMax = INT_MIN;
-    for (int i = 0; i < maxLISLengthSoFar.size(); i++) {
       overallMax = max(overallMax, maxLISLengthSoFar[i]);
     }
     return overallMax;*/
