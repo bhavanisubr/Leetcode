@@ -27,7 +27,7 @@ public:
     // NOTE: The number of structurally unique BSTs for a given n corresponds to the nth Catalan number (a sequence 
     // of natural numbers)
     
-    // Method 1: Dynammic programming - O(n^2) time and O(n) space
+    // Method 1: Dynamic programming - O(n^2) time and O(n) space
     /*if (n < 0)  return INT_MAX;
     vector<int> results(n + 1, 0);
     results[0] = results[1] = 1;
