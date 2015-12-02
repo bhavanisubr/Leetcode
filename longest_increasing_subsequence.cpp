@@ -13,9 +13,10 @@
 class Solution {
 public:
   int getCeilIndex(vector<int>& maxLISLengthSoFar, int begin, int end, int key) {
-    while (begin < end) {
+    while (begin <= end) {
       int mid = begin + (end - begin) / 2;
-      if (maxLISLengthSoFar[mid] >= key)  end = mid;
+      if (maxLISLengthSoFar[mid] == key)  return mid;
+      if (maxLISLengthSoFar[mid] > key)  end = mid - 1;
       else  begin = mid + 1;
     }
     return begin;
