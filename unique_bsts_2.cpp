@@ -42,7 +42,7 @@ public:
   }
 
   vector<TreeNode*> generateTrees(int n) {
-    if (n == 0)  return vector<TreeNode*>();
+    if (!n)  return vector<TreeNode*>();
     return generateTreesUtil(1, n);
   }
 };
