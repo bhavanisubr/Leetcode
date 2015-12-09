@@ -6,7 +6,8 @@
  * Example: Assume that the iterator is initialized to the beginning of the list: [1, 2, 3].
  * Calling next() gets you 1, the first element in the list.
  * Now you call peek() and it returns 2, the next element. Calling next() after that still returns 2.
- * You call next() the final time and it returns 3, the last element. Calling hasNext() after that should return false.
+ * You call next() the final time and it returns 3, the last element. Calling hasNext() after that should return 
+ * false.
  */
 
 // Below is the interface for Iterator, which is already defined for you.
