@@ -18,7 +18,8 @@ class Solution {
 public:
   int bulbSwitch(int n) {
     for (int sum = 0, i = 1; sum < n; i++) {
-      if ((sum += 2 * i + 1) >= n)  return i;
+      sum += 2 * i + 1;
+      if (sum >= n)  return i;
     }
     return 0;
   }
