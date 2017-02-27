@@ -16,6 +16,8 @@
 class Solution {
 public:
   int hammingDistance(int x, int y) {
+    // Method 1
+    /*
     int out = x ^ y;
     if (!out) return out;
     int count = 0;
@@ -23,5 +25,9 @@ public:
       out &= out - 1;
     }
     return count;
+    */
+
+    // Method 2
+    return __builtin_popcount(x ^ y);
   }
 };
